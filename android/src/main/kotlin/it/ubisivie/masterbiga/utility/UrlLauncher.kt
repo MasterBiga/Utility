@@ -11,6 +11,7 @@ class UrlLauncher {
         fun launchUrl(url: String, context: Context) {
             val uri = Uri.parse(url)
             val intent = Intent(Intent.ACTION_VIEW, uri)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(context, intent, null)
         }
     }
